@@ -14,13 +14,15 @@ module.exports = merge(common, {
         hot: true, // 开启模块热替换
         open: true, // 构建完成后打开浏览器
         progress: true, // 将构建进度显示到控制台
-        // proxy: [{ // 开启本地服务网络代理
-        //   context: ["/himea", "/py"], // 被代理url
-        //   target: "http://localhost:7777", // 代理指向例如 ==> http://test/123
-        // }],
-        // publicPath: "./",
+        // proxy: { // 开启本地服务网络代理
+        //     '/api': {
+        //         target: 'http://cloudfactory.shecltd.com/ncc-zjehj-web', //代理的地址
+        //         pathRewrite: {'^/api': ''},
+        //         changeOrigin: true
+        //     }
+        // }
     },
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ]

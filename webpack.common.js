@@ -16,13 +16,12 @@ module.exports = {
     entry: ['@babel/polyfill', path.resolve(__dirname, 'src/demos/index')], // 从入口文件开始进行polyfill处理
     output: {
         filename: '[name].[hash:8].js',
-        chunkFilename: '[name].[chunkhash:8].js',
+        chunkFilename: '[id].[chunkhash:8].js',
         path: path.resolve(__dirname, 'build'),
     },
     resolve: { // import时自动补全文件扩展名
         extensions: ['.js', '.jsx', '.json'],
-        alias: { // 引用别名
-        }
+        alias: {}  // 引用别名
     },
     module: {
         rules: [
@@ -130,7 +129,6 @@ module.exports = {
         new MiniCssExtractPlugin({ // css文件分割
             ignoreOrder: true,
             filename: 'styles/[name].[contenthash:8].css',
-            chunkFilename: 'styles/[name].[chunkhash:8].css'
         }),
         new OptimizeCSSAssetsPlugin({ // css文件压缩
             cssProcessorOptions: {
@@ -139,9 +137,6 @@ module.exports = {
         }),
         new webpack.ProvidePlugin({
             '_': 'lodash'
-        }),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) // 设置环境变量
         })
     ]
 };

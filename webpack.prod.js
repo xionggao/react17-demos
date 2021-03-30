@@ -9,6 +9,9 @@ const common = require('./webpack.common.js');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
+    output: {
+        publicPath: "./"
+    },
     optimization: { // webpack优化模块
         splitChunks: { // js文件分割
             chunks: 'all'
