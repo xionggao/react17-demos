@@ -1,0 +1,25 @@
+/*工程全局样式文件*/
+html,
+body,
+#root {
+  height: 100%;
+}
+
+// 文本超长样式
+.text-ellipsis {
+  text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/**
+ * 不允许选中
+ */
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
