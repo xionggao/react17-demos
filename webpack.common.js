@@ -129,6 +129,7 @@ module.exports = {
         new MiniCssExtractPlugin({ // css文件分割
             ignoreOrder: true,
             filename: 'styles/[name].[contenthash:8].css',
+            chunkFilename: 'styles/[name].[chunkhash:8].css'
         }),
         new OptimizeCSSAssetsPlugin({ // css文件压缩
             cssProcessorOptions: {

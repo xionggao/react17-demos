@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'antd';
 export default ()=>{
-    return <p>测试页面1</p>
+    return <Button type="primary">按钮1</Button>
 }
