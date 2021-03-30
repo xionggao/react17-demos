@@ -3,9 +3,8 @@
  * @author xg
  */
 import {combineReducers} from 'redux';
-import example from "./example"
+import example from "./example";
 
-const reducers = combineReducers({
+export default combineReducers({
     example
 });
-export default reducers;
